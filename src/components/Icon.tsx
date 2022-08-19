@@ -1,4 +1,9 @@
-const Icon = ({ icon = "book", classNames }) => {
+interface IconComponentProps {
+    icon: string;
+    classNames: string;
+}
+
+const Icon = ({ icon = "book", classNames }: IconComponentProps) => {
 
     const icons = {
         "book": () => (

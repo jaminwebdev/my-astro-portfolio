@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import LinkButton from '../components/Buttons/LinkButton.astro';
 import { Image } from '@astrojs/image/components';
+import ActionButton from '../components/Buttons/ActionButton';
 
 const SEO = {
     title: 'showcase',
@@ -29,7 +30,7 @@ const imageUrl =
             suspendisse ultrices gravida. Ut pharetra sit amet aliquam. Non
             tellus orci ac auctor augue mauris augue neque.
         </p>
-        <div class="bg-body-color-light-secondary min-h-screen">
+        <div class="bg-body-color-light-secondary py-20">
             <div
                 class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
                 {
@@ -37,6 +38,18 @@ const imageUrl =
                         <LinkButton variant="ghost" link="/">
                             <span>Link Button</span>
                         </LinkButton>
+                    ))
+                }
+            </div>
+        </div>
+        <div class="bg-body-color-light-secondary py-20">
+            <div
+                class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+                {
+                    [1, 2, 3].map((i) => (
+                        <ActionButton client:load variant="ghost" color="secondary" callback={() => {}}>
+                            <span>Action Button</span>
+                        </ActionButton>
                     ))
                 }
             </div>

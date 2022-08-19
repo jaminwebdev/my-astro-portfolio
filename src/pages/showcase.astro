@@ -4,6 +4,7 @@ import LinkButton from '../components/Buttons/LinkButton.astro';
 import { Image } from '@astrojs/image/components';
 import ActionButton from '../components/Buttons/ActionButton';
 import Icon from '../components/Icon';
+import Link from '../components/Link.astro';
 
 const SEO = {
     title: 'showcase',
@@ -55,6 +56,11 @@ const imageUrl =
                         </ActionButton>
                     ))
                 }
+            </div>
+        </div>
+        <div class="bg-body-color-light-secondary py-20">
+            <div class="max-w-4xl mx-auto grid">
+                <p>Blah blah <Link link="/">Link</Link> blah blah</p>
             </div>
         </div>
         <Image

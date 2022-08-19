@@ -1,0 +1,27 @@
+---
+    const decorationColors = {
+        0: "decoration-sky-500",
+        1: "decoration-pink-500",
+        2: "decoration-indigo-500",
+        3: "decoration-emerald-500",
+    };
+
+  const randomNumber = Math.floor(Math.random() * 4);
+  const randomColor = decorationColors[randomNumber];
+  const { link } = Astro.props
+---
+<span class="group">
+    <a
+      href={link}
+      class={`
+        underline
+        decoration-2
+        font-semibold
+        inline-block
+        group-hover:scale-110
+        transition-transform
+        duration-200
+        ${randomColor}`}>
+      <slot></slot>
+    </a>
+  </span>

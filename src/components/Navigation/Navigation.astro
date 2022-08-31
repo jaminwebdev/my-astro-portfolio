@@ -1,0 +1,25 @@
+---
+import DesktopNavigation from "./DesktopNavigation.astro";
+import Icon from "../Icon";
+---
+
+<nav class="fixed top-7 left-[50%] -translate-x-1/2 mx-auto w-full max-w-7xl z-[1000]">
+    <div class="px-6 lg:px-14 py-3 mx-3 lg:mx-auto relative grid grid-cols-3 items-center -mb-28 bg-white dark:bg-body-color-dark-secondary rounded-3xl shadow-xl shadow-primary-dark/5 dark:shadow-body-color-dark">
+        <a href="/">Home</a>
+        <DesktopNavigation styles="hidden lg:grid" />
+        <div id="mobileMenuToggle" class="inline-block lg:hidden justify-self-end col-start-3">
+            <Icon
+                icon="menu"
+                classNames=" fill-primary-medium dark:fill-body-text-light w-5 cursor-pointer"
+            />
+        </div>
+    </div>
+</nav>
+
+<script is:inline>
+    const mobileMenuToggle = document.querySelector('#mobileMenuToggle');
+    mobileMenuToggle.addEventListener('click', () => {
+        const appLayout = document.querySelector('#appLayout');
+        appLayout.classList.add('perspective-400','rotate-y-65','origin-left-center')
+    })
+</script>

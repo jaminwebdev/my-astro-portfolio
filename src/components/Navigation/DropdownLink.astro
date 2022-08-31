@@ -1,0 +1,12 @@
+---
+export interface Props {
+    link: string;
+}
+const { link } = Astro.props as Props;
+---
+
+<div class="peer">
+    <a href={link} class="text-lg font-medium py-4 px-5 text-secondary hover:bg-secondary/20 hover:text-secondary dark:hover:text-white w-full grid gap-3 grid-flow-col justify-start items-center">
+        <slot />
+    </a>
+</div>

@@ -1,0 +1,43 @@
+---
+import DropdownLink from "./DropdownLink.astro";
+import Icon from "../Icon";
+
+export interface Props {
+    styles: string;
+}
+
+const { styles } = Astro.props as Props;
+---
+
+<div class={`col-span-2 grid-flow-col gap-10 justify-end ${styles}`}>
+    <div class="relative">
+        <a href="/" class="text-lg p-4 font-medium text-primary-medium hover:text-secondary dark:text-body-text-light">
+          Portfolio
+        </a>
+    </div>
+    <div class="relative">
+        <a href="/"  class="peer text-lg p-4 font-medium text-primary-medium hover:text-secondary dark:text-body-text-light">
+          Resources
+        </a>
+      <div class="invisible opacity-0 peer-hover:visible peer-hover:opacity-100 hover:visible hover:opacity-100 transition-all ease-out duration-100 grid w-40 absolute top-[120%] z-50 bg-white dark:bg-body-color-dark-secondary rounded-lg shadow-lg shadow-primary-dark/10 overflow-hidden">
+        <DropdownLink link="/">
+          <Icon icon="book" classNames="fill-secondary w-3"></Icon>
+          Blog
+        </DropdownLink>
+        <DropdownLink link="/">
+          <Icon icon="clipboard" classNames="fill-secondary w-3"></Icon>
+          Learn JS
+        </DropdownLink>
+      </div>
+    </div>
+    <a href="https://github.com">
+      <Icon
+        icon="github"
+        classNames="w-8 fill-primary-dark dark:fill-secondary hover:scale-110 hover:fill-secondary transition-all duration-100"></Icon>
+    </a>
+    <a href="https://linkedin.com">
+      <Icon
+        icon="linkedin"
+        classNames="w-6 fill-primary-dark dark:fill-secondary hover:scale-110 hover:fill-secondary transition-all duration-100"></Icon>
+    </a>
+  </div>

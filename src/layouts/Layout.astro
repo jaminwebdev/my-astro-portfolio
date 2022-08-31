@@ -1,6 +1,8 @@
 ---
 import { SEO } from 'astro-seo';
 import '../styles/tailwind.css';
+import Navigation from '../components/Navigation/Navigation.astro';
+import MobileMenuNavigation from '../components/Navigation/MobileMenuNavigation.astro';
 export interface Props {
     seo: {
         title: string;
@@ -15,8 +17,13 @@ const { seo } = Astro.props as Props;
 <html lang="en">
     <head>
         <SEO title={seo.title} description={seo.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <slot />
+        <MobileMenuNavigation />
+        <div id="appLayout" class="relative z-10 bg-body-color-light dark:bg-body-color-dark min-h-[150vh] transition-all ease-out duration-500">
+            <Navigation />
+            <slot />
+        </div>
     </body>
 </html>

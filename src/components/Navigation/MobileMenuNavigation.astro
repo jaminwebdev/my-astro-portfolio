@@ -1,0 +1,22 @@
+---
+import Icon from "../Icon";
+---
+
+<div class="fixed w-screen h-screen bg-body-color-dark-secondary dark:bg-[#223544] z-0 grid justify-items-end items-center pr-10">
+    <div id="closeMobileMenu" class="absolute right-8 top-6 cursor-pointer">
+        <Icon icon="close" classNames="fill-white w-8" />
+    </div>
+    <div>
+        <p class="text-white">Blog</p>
+        <p class="text-white">Resources</p>
+        <p class="text-white">Contact</p>
+      </div>
+</div>
+
+<script is:inline>
+    const closeMobileMenu = document.querySelector('#closeMobileMenu');
+    closeMobileMenu.addEventListener('click', () => {
+        const appLayout = document.querySelector('#appLayout');
+        appLayout.classList.remove('perspective-400','rotate-y-65','origin-left-center')
+    })
+</script>

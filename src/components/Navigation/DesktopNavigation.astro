@@ -1,6 +1,7 @@
 ---
 import DropdownLink from "./DropdownLink.astro";
 import Icon from "../Icon";
+import ThemeToggle from "../Buttons/ThemeToggle"
 
 export interface Props {
     styles: string;
@@ -9,7 +10,7 @@ export interface Props {
 const { styles } = Astro.props as Props;
 ---
 
-<div class={`col-span-2 grid-flow-col gap-10 justify-end ${styles}`}>
+<div class={`col-span-2 grid-flow-col gap-10 justify-end items-center ${styles}`}>
     <div class="relative">
         <a href="/" class="text-lg p-4 font-medium text-primary-medium hover:text-secondary dark:text-body-text-light">
           Portfolio
@@ -40,4 +41,5 @@ const { styles } = Astro.props as Props;
         icon="linkedin"
         classNames="w-6 fill-primary-dark dark:fill-secondary hover:scale-110 hover:fill-secondary transition-all duration-100"></Icon>
     </a>
+    <ThemeToggle client:load/>
   </div>
